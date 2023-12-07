@@ -1,10 +1,10 @@
+
+import java.util.Scanner;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package trabalho2bim;
-
-import java.util.Scanner;
 
 /**
  *
@@ -13,19 +13,17 @@ import java.util.Scanner;
 public class ex03 {
 
     public static void main(String[] args) {
-         String[] nome_usuario = new String[5];
+       Scanner s = new Scanner(System.in);
 
-        Scanner s = new Scanner(System.in);
+        System.out.print("Digite um número: ");
+            int informe_num = s.nextInt();
 
-        for (int i = 0; i < 5; i++) {
-            System.out.print("Digite o nome: ");
-            nome_usuario[i] = s.nextLine();
+        if (informe_num % 2 == 0) {
+            System.out.println("O número é par.");
+        } else {
+            System.out.println("O número é ímpar.");
         }
 
-        System.out.println("Nomes informados em ordem:");
-        for (int i = 0; i < 5; i++) {
-            System.out.println((i + 1) + "° " + nome_usuario[i]);
-        }
         s.close();
     }
     

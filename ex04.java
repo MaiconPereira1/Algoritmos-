@@ -1,46 +1,46 @@
+
+import java.util.Random;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package trabalho2bim;
-
-import java.util.Scanner;
 
 /**
  *
  * @author maicon
  */
 public class ex04 {
-    
+
     public static void main(String[] args) {
+              int[] vetor = new int[30];
         
-        int[] vetor_1 = new int[8];
-        int[] vetor_2 = new int[8];
-        int[] vetor_multiplicacao = new int[8];
-
-        Scanner s = new Scanner(System.in);
-
-        System.out.println("Digite os valores para o primeiro vetor:");
-        for (int i = 0; i < 8; i++) {
-            System.out.print("Digite o valor " + (i + 1) + ": ");
-            vetor_1[i] = s.nextInt();
+        Random ram = new Random();
+        for (int i = 0; i < vetor.length; i++) {
+            vetor[i] = ram.nextInt(100);
         }
-
-        System.out.println("Digite os valores para o segundo vetor:");
-        for (int i = 0; i < 8; i++) {
-            System.out.print("Digite o valor " + (i + 1) + ": ");
-            vetor_2[i] = s.nextInt();
+        int somar_valor = 0;
+        for (int valor : vetor) {
+            somar_valor += valor;
         }
-
-        for (int i = 0; i < 8; i++) {
-            vetor_multiplicacao[i] = vetor_1[i] * vetor_2[i];
+        int menor_valor = vetor[0];
+        int maior_valor = vetor[0];
+        for (int valor : vetor) {
+            if (valor < menor_valor) {
+                menor_valor = valor;
+            }
+            if (valor > maior_valor) {
+                maior_valor = valor;
+            }
         }
-        System.out.println("Resultado da multiplicação:");
-        for (int i = 0; i < 8; i++) {
-            System.out.println("Resultado " + (i + 1) + "°: " + vetor_multiplicacao[i]);
-        }
-
-        s.close();
+        System.out.println(">RESULTADO:");
+        System.out.println("Soma: " + somar_valor);
+        System.out.println("Menor: " + menor_valor);
+        System.out.println("Maior: " + maior_valor);
+        System.out.print("Vetor[0]:" + vetor[0]);
+        System.out.print(" |Vetor[9]:" + vetor[9]);
+        System.out.print(" |Vetor[19]:" + vetor[19]);
+        System.out.print(" |Vetor[29]:" + vetor[29]);
     }
     
 }
